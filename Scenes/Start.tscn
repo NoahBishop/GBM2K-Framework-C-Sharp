@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cub3tpa63fya4"]
+
+[ext_resource type="PackedScene" uid="uid://cktlplg0urpum" path="res://Scenes/Maps/world.tscn" id="1_og4jd"]
+
+[node name="Start" type="Control" unique_id=1320399271]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1958731441]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CenterContainer" unique_id=511674551]
+texture_filter = 1
+custom_minimum_size = Vector2(1440, 1080)
+layout_mode = 2
+stretch = true
+stretch_shrink = 4
+
+[node name="SubViewport" type="SubViewport" parent="CenterContainer/SubViewportContainer" unique_id=1917294604]
+handle_input_locally = false
+size = Vector2i(360, 270)
+render_target_update_mode = 4
+
+[node name="World" parent="CenterContainer/SubViewportContainer/SubViewport" unique_id=1530877743 instance=ExtResource("1_og4jd")]
